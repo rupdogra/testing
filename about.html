@@ -8,6 +8,205 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Lato:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
+  <style>
+    .about-wrapper {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 3rem;
+    }
+
+    .about-content {
+      space-y: 2rem;
+    }
+
+    .about-section {
+      margin-bottom: 3rem;
+    }
+
+    .about-section h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.8rem;
+      margin-bottom: 1.5rem;
+      font-weight: 700;
+      color: #1a2f4d;
+    }
+
+    .about-section p {
+      color: #666;
+      line-height: 1.8;
+      margin-bottom: 1rem;
+      font-size: 0.95rem;
+    }
+
+    .about-achievements {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .achievement-card {
+      background: #f5f3f0;
+      padding: 2rem;
+      border-radius: 0.75rem;
+      text-align: center;
+    }
+
+    .achievement-card .number {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: #d4714d;
+      margin-bottom: 0.5rem;
+    }
+
+    .achievement-card .label {
+      font-size: 0.9rem;
+      color: #666;
+      font-weight: 500;
+    }
+
+    .about-sidebar {
+      background: #f5f3f0;
+      padding: 2rem;
+      border-radius: 0.75rem;
+      height: fit-content;
+      position: sticky;
+      top: 100px;
+    }
+
+    .about-sidebar-image {
+      width: 100%;
+      border-radius: 0.75rem;
+      margin-bottom: 1.5rem;
+      display: block;
+    }
+
+    .about-sidebar-name {
+      text-align: center;
+      margin-bottom: 1.5rem;
+    }
+
+    .about-sidebar-name h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem;
+      margin-bottom: 0.3rem;
+      font-weight: 700;
+      color: #1a2f4d;
+    }
+
+    .about-sidebar-name p {
+      font-size: 0.9rem;
+      color: #666;
+    }
+
+    .about-sidebar-social {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      margin-bottom: 1.5rem;
+    }
+
+    .about-sidebar-social a {
+      width: 40px;
+      height: 40px;
+      border: 1.5px solid #d4714d;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #d4714d;
+      transition: all 0.3s ease;
+      font-size: 1rem;
+      font-weight: 600;
+    }
+
+    .about-sidebar-social a:hover {
+      background: #d4714d;
+      color: white;
+    }
+
+    .about-sidebar-divider {
+      border-top: 1px solid #e0dbd5;
+      margin: 1.5rem 0;
+    }
+
+    .about-sidebar-cta {
+      width: 100%;
+      text-align: center;
+      margin-bottom: 1.5rem;
+    }
+
+    .about-portfolio-section {
+      margin-bottom: 2rem;
+    }
+
+    .about-portfolio-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: #1a2f4d;
+      margin-bottom: 1rem;
+    }
+
+    .about-portfolio-carousel {
+      width: 100%;
+      border-radius: 0.75rem;
+      overflow: hidden;
+      background: #e0dbd5;
+      aspect-ratio: 1;
+      margin-bottom: 1rem;
+    }
+
+    .about-portfolio-carousel img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .carousel-nav {
+      display: flex;
+      justify-content: center;
+      gap: 0.5rem;
+    }
+
+    .carousel-nav button {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #e0dbd5;
+      border: none;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .carousel-nav button.active {
+      background: #d4714d;
+      width: 24px;
+      border-radius: 4px;
+    }
+
+    @media (max-width: 1024px) {
+      .about-wrapper {
+        grid-template-columns: 1fr;
+      }
+
+      .about-sidebar {
+        position: relative;
+        top: 0;
+      }
+
+      .about-achievements {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .about-achievements {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
 </head>
 <body>
   <!-- HEADER -->
@@ -20,7 +219,7 @@
         <a href="index.html#publications">Publications</a>
         <a href="index.html#services">Services</a>
         <a href="index.html#contact">Contact</a>
-        <a href="shop.html">Shop</a>
+        <a href="shop.html" class="nav-shop">Shop</a>
       </nav>
     </div>
   </header>
@@ -34,21 +233,21 @@
           <!-- Vision -->
           <div class="about-section">
             <h2>Vision</h2>
-            <p>To help organizations and individuals achieve excellence through thoughtful design and clear communication. I believe that the best products and the best teams are built on a foundation of clear thinking and precise communication.</p>
+            <p>To help organizations and individuals achieve excellence through thoughtful design and clear communication. I believe that the best products and the best teams are built on a foundation of deep understanding—of users, of problems, and of each other.</p>
           </div>
 
           <!-- Philosophy -->
           <div class="about-section">
             <h2>Philosophy</h2>
-            <p>Great design is invisible—it works so well that users don't think about it. I apply behavioral psychology, cognitive science, and human-centered design principles to create systems that feel natural and intuitive. Every decision is grounded in research and validated through testing.</p>
-            <p style="margin-top: 1rem;">Communication is no different. The best speakers aren't the loudest—they're the clearest. I help high-performers structure their thinking and articulate their ideas with precision and confidence.</p>
+            <p>Great design is invisible—it works so well that users don't think about it. I apply behavioral psychology, cognitive science, and human-centered design principles to create systems that people actually want to use.</p>
+            <p>Communication is no different. The best speakers aren't the loudest—they're the clearest. I help high-performers structure their thinking and articulate complex ideas with precision and confidence.</p>
           </div>
 
           <!-- Personality & Outside of Work -->
           <div class="about-section">
             <h2>Personality & Outside of Work</h2>
-            <p>I'm curious, analytical, and empathetic. I ask a lot of questions because I believe understanding the problem deeply is more important than jumping to solutions. I'm also a bit of a perfectionist—I won't ship something until it's right. But I balance that with pragmatism: done is better than perfect, and iteration beats perfection.</p>
-            <p style="margin-top: 1rem;">When I'm not designing or coaching, you'll find me exploring new cities, reading about behavioral psychology and philosophy, or experimenting with new recipes in the kitchen. I'm fascinated by how people think, make decisions, and communicate across different cultures.</p>
+            <p>I'm curious, analytical, and empathetic. I ask a lot of questions because I believe understanding the problem deeply is more important than jumping to solutions. I'm also a bit of a design perfectionist—but I've learned when "good enough" is the right call.</p>
+            <p>When I'm not designing or coaching, you'll find me exploring new cities, reading about behavioral psychology and philosophy, or experimenting with new recipes in the kitchen.</p>
           </div>
 
           <!-- Quote -->
@@ -107,7 +306,7 @@
           <div class="about-portfolio-section">
             <div class="about-portfolio-title">Portfolio</div>
             <div class="about-portfolio-carousel">
-              <img id="portfolioCarousel" src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=300&h=300&fit=crop" alt="Portfolio item" style="opacity: 1; transition: opacity 0.3s ease;">
+              <img id="portfolioCarousel" src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=300&h=300&fit=crop" alt="Portfolio item">
             </div>
             <div class="carousel-nav portfolio-nav">
               <button class="active"></button>
@@ -119,7 +318,7 @@
           <div class="about-portfolio-section">
             <div class="about-portfolio-title">Publications</div>
             <div class="about-portfolio-carousel">
-              <img id="publicationCarousel" src="https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=300&h=300&fit=crop" alt="Publication item" style="opacity: 1; transition: opacity 0.3s ease;">
+              <img id="publicationCarousel" src="https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=300&h=300&fit=crop" alt="Publication item">
             </div>
             <div class="carousel-nav publication-nav">
               <button class="active"></button>
@@ -161,7 +360,7 @@
 
       <div class="footer-section">
         <h4>Download</h4>
-        <button class="btn btn-primary" onclick="alert('Resume download - implement with your PDF URL')" style="width: 100%; justify-content: center;">📥 Resume (PDF)</button>
+        <a href="your-resume-url.pdf" download class="btn btn-primary" style="width: 100%; justify-content: center; text-align: center;">Download Resume</a>
       </div>
     </div>
 
@@ -169,7 +368,7 @@
 
     <div class="footer-newsletter">
       <h4>Stay Updated</h4>
-      <p>Get insights on product design and communication delivered to your inbox.</p>
+      <p>Join our community of designers and leaders. Get exclusive insights on product design and communication delivered to your inbox every week.</p>
       <form class="footer-newsletter-form" onsubmit="event.preventDefault(); alert('Newsletter signup - implement with backend');">
         <input type="email" placeholder="your@email.com" required>
         <button type="submit">✉</button>
