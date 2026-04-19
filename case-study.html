@@ -37,9 +37,11 @@
     }
 
     .case-study-header h1 {
+      font-family: 'Playfair Display', serif;
       font-size: 3rem;
       color: white;
       margin-bottom: 1rem;
+      font-weight: 700;
     }
 
     .case-study-header-meta {
@@ -91,8 +93,11 @@
     }
 
     .case-study-section h2 {
+      font-family: 'Playfair Display', serif;
       font-size: 2rem;
       margin-bottom: 1.5rem;
+      font-weight: 700;
+      color: #1a2f4d;
     }
 
     .case-study-section p {
@@ -154,8 +159,11 @@
     }
 
     .case-study-cta h3 {
+      font-family: 'Playfair Display', serif;
       font-size: 1.5rem;
       margin-bottom: 1rem;
+      font-weight: 700;
+      color: #1a2f4d;
     }
 
     .case-study-cta p {
@@ -193,7 +201,7 @@
         <a href="index.html#publications">Publications</a>
         <a href="index.html#services">Services</a>
         <a href="index.html#contact">Contact</a>
-        <a href="shop.html">Shop</a>
+        <a href="shop.html" class="nav-shop">🛒 Shop</a>
       </nav>
     </div>
   </header>
@@ -238,7 +246,7 @@
     <!-- CHALLENGE -->
     <section class="case-study-section">
       <h2>The Challenge</h2>
-      <p>Enterprise CRM systems are notoriously complex. Users spend more time navigating the interface than actually managing relationships. The existing system had poor information architecture, inconsistent workflows, and high cognitive load—leading to low adoption rates and frustrated teams.</p>
+      <p>Enterprise CRM systems are notoriously complex. Users spend more time navigating the interface than actually managing relationships. The existing system had poor information architecture[...]</p>
       <p>Our goal: Redesign the entire CRM workflow to reduce friction, improve task completion rates, and make the system intuitive enough that users prefer it to spreadsheets and email.</p>
     </section>
 
@@ -257,17 +265,17 @@
     <section class="case-study-section">
       <h2>Process</h2>
       
-      <h3 style="font-size: 1.3rem; margin: 2rem 0 1rem 0; color: #1a2f4d;">Research & Discovery</h3>
-      <p>We conducted 15 user interviews, analyzed usage patterns, and identified pain points. Key finding: users spent 60% of their time searching for information instead of taking action. This insight drove our entire redesign strategy.</p>
+      <h3 style="font-family: 'Playfair Display', serif; font-size: 1.3rem; margin: 2rem 0 1rem 0; color: #1a2f4d; font-weight: 700;">Research & Discovery</h3>
+      <p>We conducted 15 user interviews, analyzed usage patterns, and identified pain points. Key finding: users spent 60% of their time searching for information instead of taking action. This [...]</p>
 
-      <h3 style="font-size: 1.3rem; margin: 2rem 0 1rem 0; color: #1a2f4d;">Information Architecture</h3>
-      <p>We restructured the navigation based on user mental models, not organizational hierarchy. Instead of organizing by features, we organized by user workflows: "Manage Relationships," "Track Deals," "Collaborate," and "Analyze."</p>
+      <h3 style="font-family: 'Playfair Display', serif; font-size: 1.3rem; margin: 2rem 0 1rem 0; color: #1a2f4d; font-weight: 700;">Information Architecture</h3>
+      <p>We restructured the navigation based on user mental models, not organizational hierarchy. Instead of organizing by features, we organized by user workflows: "Manage Relationships," "Trac[...]</p>
 
-      <h3 style="font-size: 1.3rem; margin: 2rem 0 1rem 0; color: #1a2f4d;">Behavioral Design</h3>
-      <p>Applied behavioral psychology principles to reduce decision fatigue. Implemented smart defaults, progressive disclosure, and contextual help. Every interaction was designed to guide users toward the right action.</p>
+      <h3 style="font-family: 'Playfair Display', serif; font-size: 1.3rem; margin: 2rem 0 1rem 0; color: #1a2f4d; font-weight: 700;">Behavioral Design</h3>
+      <p>Applied behavioral psychology principles to reduce decision fatigue. Implemented smart defaults, progressive disclosure, and contextual help. Every interaction was designed to guide user[...]</p>
 
-      <h3 style="font-size: 1.3rem; margin: 2rem 0 1rem 0; color: #1a2f4d;">Validation & Iteration</h3>
-      <p>Tested prototypes with 40+ users across different roles. Iterated based on feedback, focusing on the highest-impact workflows first. Achieved 92% task completion in final testing vs. 45% in the original system.</p>
+      <h3 style="font-family: 'Playfair Display', serif; font-size: 1.3rem; margin: 2rem 0 1rem 0; color: #1a2f4d; font-weight: 700;">Validation & Iteration</h3>
+      <p>Tested prototypes with 40+ users across different roles. Iterated based on feedback, focusing on the highest-impact workflows first. Achieved 92% task completion in final testing vs. 45%[...]</p>
     </section>
 
     <!-- IMPACT -->
@@ -304,7 +312,7 @@
     <div class="case-study-cta">
       <h3>Interested to know more about this project?</h3>
       <p>Let's discuss how I can help solve similar challenges for your organization.</p>
-      <a href="index.html#contact" class="btn btn-primary">Get in Touch →</a>
+      <a href="javascript:void(0)" onclick="goToContactWithCaseStudy('AI-Powered CRM System')" class="btn btn-primary">Get in Touch →</a>
     </div>
   </div>
 
@@ -338,7 +346,7 @@
 
       <div class="footer-section">
         <h4>Download</h4>
-        <button class="btn btn-primary" onclick="alert('Resume download - implement with your PDF URL')" style="width: 100%; justify-content: center;">📥 Resume (PDF)</button>
+        <a href="your-resume-url.pdf" download class="btn btn-primary" style="width: 100%; justify-content: center; text-align: center;">Download Resume</a>
       </div>
     </div>
 
@@ -346,7 +354,7 @@
 
     <div class="footer-newsletter">
       <h4>Stay Updated</h4>
-      <p>Get insights on product design and communication delivered to your inbox.</p>
+      <p>Join our community of designers and leaders. Get exclusive insights on product design and communication delivered to your inbox every week.</p>
       <form class="footer-newsletter-form" onsubmit="event.preventDefault(); alert('Newsletter signup - implement with backend');">
         <input type="email" placeholder="your@email.com" required>
         <button type="submit">✉</button>
