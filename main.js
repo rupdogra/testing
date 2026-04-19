@@ -132,7 +132,7 @@ let publicationsInterval = null;
 function initPublicationsCarousel() {
   const playButton = document.querySelector('.publications-controls button');
   const indicators = document.querySelectorAll('.publications-indicator');
-
+  const scrollContainer = document.querySelector('.publications-scroll');
 
   // Play/pause button
   if (playButton) {
@@ -149,15 +149,17 @@ function initPublicationsCarousel() {
   }
 
   // Hover pause/play
-  scrollContainer.addEventListener('mouseenter', () => {
-    if (publicationsInterval) clearInterval(publicationsInterval);
-  });
+  if (scrollContainer) {
+    scrollContainer.addEventListener('mouseenter', () => {
+      if (publicationsInterval) clearInterval(publicationsInterval);
+    });
 
-  scrollContainer.addEventListener('mouseleave', () => {
-    if (publicationsIsPlaying) {
-      startPublicationsCarousel();
-    }
-  });
+    scrollContainer.addEventListener('mouseleave', () => {
+      if (publicationsIsPlaying) {
+        startPublicationsCarousel();
+      }
+    });
+  }
 
   // Indicator clicks
   indicators.forEach((indicator, index) => {
@@ -356,12 +358,26 @@ function filterProducts(category) {
 }
 
 // ============================================
-// SHOP TO CONTACT FORM AUTO-FILL
+// CONTACT FORM AUTO-FILL HELPERS
 // ============================================
 
 function goToContactWithProduct(productName) {
   const params = new URLSearchParams();
   params.set('product', productName);
+  params.set('service', 'shop');
+  window.location.href = `index.html#contact?${params.toString()}`;
+}
+
+function goToContactWithService(serviceName) {
+  const params = new URLSearchParams();
+  params.set('service', serviceName);
+  window.location.href = `index.html#contact?${params.toString()}`;
+}
+
+function goToContactWithCaseStudy(caseStudyName) {
+  const params = new URLSearchParams();
+  params.set('case', caseStudyName);
+  params.set('service', 'product-design');
   window.location.href = `index.html#contact?${params.toString()}`;
 }
 
@@ -373,14 +389,26 @@ function initContactForm() {
   const form = document.querySelector('.contact-form');
   if (!form) return;
 
-  // Get URL parameters
-  const params = new URLSearchParams(window.location.hash.split('?')[1]);
+  // Get URL parameters from hash (e.g., #contact?product=Executive+Presence+Framework)
+  const hash = window.location.hash.split('?')[1];
+  const params = new URLSearchParams(hash);
   const product = params.get('product');
+  const service = params.get('service');
+  const caseStudy = params.get('case');
 
-  if (product) {
-    const messageField = form.querySelector('textarea[name="message"]');
-    if (messageField) {
-      messageField.value = `I'm interested in: ${product}`;
+  // Auto-fill service dropdown
+  const serviceSelect = form.querySelector('select[name="service"]');
+  if (service && serviceSelect) {
+    serviceSelect.value = decodeURIComponent(service);
+  }
+
+  // Auto-fill message
+  const messageField = form.querySelector('textarea[name="message"]');
+  if (messageField) {
+    if (product) {
+      messageField.value = `I'm interested in: ${decodeURIComponent(product)}`;
+    } else if (caseStudy) {
+      messageField.value = `I'm interested in discussing: ${decodeURIComponent(caseStudy)}`;
     }
   }
 
@@ -392,6 +420,7 @@ function initContactForm() {
       fullName: form.querySelector('input[name="fullName"]').value,
       email: form.querySelector('input[name="email"]').value,
       phone: form.querySelector('input[name="phone"]').value,
+      service: form.querySelector('select[name="service"]').value,
       message: form.querySelector('textarea[name="message"]').value,
     };
 
@@ -513,6 +542,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initAboutCarousels();
   initContactForm();
   initNewsletterPopup();
+  initSmoothScroll();
 });
 
 // Cleanup on page unload
