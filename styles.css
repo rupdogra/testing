@@ -1463,3 +1463,102 @@ footer {
     font-size: 0.95rem;
   }
 }
+/* ============================================
+   UPDATED NAVIGATION - SHOP LINK
+   ============================================ */
+
+nav a.nav-shop {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  background: transparent;
+  color: var(--foreground);
+  padding: 0;
+  border-radius: 0;
+  transition: all 0.3s ease;
+  font-size: 0.95rem;
+  font-weight: 500;
+  position: relative;
+}
+
+nav a.nav-shop::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--accent);
+  transition: width 0.3s ease;
+}
+
+nav a.nav-shop:hover {
+  color: var(--accent);
+  background: transparent;
+  transform: none;
+}
+
+nav a.nav-shop:hover::after {
+  width: 100%;
+}
+
+/* ============================================
+   PRODUCT TITLES FONT
+   ============================================ */
+
+.product-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.3rem;
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+  color: var(--primary);
+}
+
+/* ============================================
+   SVG ICONS - CLEAN VECTOR STYLE
+   ============================================ */
+
+.icon-svg {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  fill: none;
+  vertical-align: -0.125em;
+}
+
+.contact-info-icon {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: var(--accent);
+  font-size: 1.5rem;
+}
+
+.contact-info-icon svg {
+  width: 100%;
+  height: 100%;
+  stroke: var(--accent);
+  stroke-width: 1.5;
+  fill: none;
+}
+
+/* ============================================
+   CASE STUDY LINKS FIX
+   ============================================ */
+
+.case-card-link {
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.case-card-link:hover {
+  text-decoration: none;
+}
