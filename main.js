@@ -366,6 +366,14 @@ function goToContactWithProduct(productName) {
   params.set('product', productName);
   params.set('service', 'shop');
   window.location.href = `index.html#contact?${params.toString()}`;
+  
+  // Wait a moment for the page to load, then scroll
+  setTimeout(() => {
+    const contactForm = document.querySelector('.contact-form');
+    if (contactForm) {
+      contactForm.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  }, 500);
 }
 
 function goToContactWithService(serviceName) {
