@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Case Study - SR Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Lato:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .case-study-header {
+      background: linear-gradient(135deg, #1a2f4d 0%, #2a4a6d 100%);
+      color: white;
+      padding: 4rem 0;
+      margin-bottom: 3rem;
+    }
+
+    .case-study-header-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    .case-study-back {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: rgba(255, 255, 255, 0.8);
+      margin-bottom: 2rem;
+      transition: color 0.3s ease;
+      cursor: pointer;
+    }
+
+    .case-study-back:hover {
+      color: #d4714d;
+    }
+
+    .case-study-header h1 {
+      font-size: 3rem;
+      color: white;
+      margin-bottom: 1rem;
+    }
+
+    .case-study-header-meta {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2rem;
+      margin-top: 3rem;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .case-study-meta-item h3 {
+      color: #d4714d;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 0.5rem;
+      font-weight: 600;
+    }
+
+    .case-study-meta-item p {
+      color: white;
+      font-size: 0.95rem;
+    }
+
+    .case-study-hero-image {
+      width: 100%;
+      height: 500px;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      margin-bottom: 4rem;
+      border-radius: 0.75rem;
+      overflow: hidden;
+    }
+
+    .case-study-hero-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .case-study-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    .case-study-section {
+      margin-bottom: 4rem;
+    }
+
+    .case-study-section h2 {
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .case-study-section p {
+      color: #666;
+      line-height: 1.8;
+      margin-bottom: 1rem;
+    }
+
+    .case-study-section ul {
+      list-style: none;
+      margin-left: 1rem;
+    }
+
+    .case-study-section ul li {
+      margin-bottom: 0.8rem;
+      color: #666;
+      line-height: 1.8;
+    }
+
+    .case-study-section ul li::before {
+      content: '→ ';
+      color: #d4714d;
+      font-weight: bold;
+      margin-right: 0.5rem;
+    }
+
+    .case-study-metrics {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      margin: 2rem 0;
+      padding: 2rem;
+      background: #f5f3f0;
+      border-radius: 0.75rem;
+    }
+
+    .case-study-metric {
+      text-align: center;
+    }
+
+    .case-study-metric-value {
+      font-size: 2.5rem;
+      color: #d4714d;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+
+    .case-study-metric-label {
+      color: #666;
+      font-size: 0.95rem;
+    }
+
+    .case-study-cta {
+      background: #f5f3f0;
+      padding: 3rem 2rem;
+      border-radius: 0.75rem;
+      text-align: center;
+      margin-top: 4rem;
+    }
+
+    .case-study-cta h3 {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .case-study-cta p {
+      margin-bottom: 1.5rem;
+      color: #666;
+    }
+
+    @media (max-width: 768px) {
+      .case-study-header-meta {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .case-study-header h1 {
+        font-size: 2rem;
+      }
+
+      .case-study-hero-image {
+        height: 300px;
+      }
+
+      .case-study-metrics {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- HEADER -->
+  <header>
+    <div class="header-container">
+      <a href="index.html" class="logo">SR <span class="logo-subtitle">Product Designer</span></a>
+      <nav>
+        <a href="about.html">About</a>
+        <a href="index.html#case-studies">Work</a>
+        <a href="index.html#publications">Publications</a>
+        <a href="index.html#services">Services</a>
+        <a href="index.html#contact">Contact</a>
+        <a href="shop.html">Shop</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- CASE STUDY HEADER -->
+  <div class="case-study-header">
+    <div class="case-study-header-content">
+      <a href="index.html#case-studies" class="case-study-back">← Back to Work</a>
+      
+      <h1 id="projectTitle">AI-Powered CRM System</h1>
+      
+      <div class="case-study-header-meta">
+        <div class="case-study-meta-item">
+          <h3>Role</h3>
+          <p id="projectRole">Lead Product Designer</p>
+        </div>
+        <div class="case-study-meta-item">
+          <h3>Timeline</h3>
+          <p id="projectTimeline">6 months</p>
+        </div>
+        <div class="case-study-meta-item">
+          <h3>Team</h3>
+          <p id="projectTeam">Design, Engineering, Product</p>
+        </div>
+        <div class="case-study-meta-item">
+          <h3>Tools</h3>
+          <p id="projectTools">Figma, Framer, User Testing</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- HERO IMAGE -->
+  <div class="case-study-content">
+    <div class="case-study-hero-image">
+      <img id="projectHeroImage" src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=1200&h=500&fit=crop" alt="Project hero">
+    </div>
+  </div>
+
+  <!-- MAIN CONTENT -->
+  <div class="case-study-content">
+    <!-- CHALLENGE -->
+    <section class="case-study-section">
+      <h2>The Challenge</h2>
+      <p>Enterprise CRM systems are notoriously complex. Users spend more time navigating the interface than actually managing relationships. The existing system had poor information architecture, inconsistent workflows, and high cognitive load—leading to low adoption rates and frustrated teams.</p>
+      <p>Our goal: Redesign the entire CRM workflow to reduce friction, improve task completion rates, and make the system intuitive enough that users prefer it to spreadsheets and email.</p>
+    </section>
+
+    <!-- OBJECTIVE -->
+    <section class="case-study-section">
+      <h2>Objective</h2>
+      <ul>
+        <li>Reduce task completion time by 40%</li>
+        <li>Improve user satisfaction scores from 3.2 to 4.5+</li>
+        <li>Increase feature adoption from 30% to 80%</li>
+        <li>Create a scalable design system for future iterations</li>
+      </ul>
+    </section>
+
+    <!-- PROCESS -->
+    <section class="case-study-section">
+      <h2>Process</h2>
+      
+      <h3 style="font-size: 1.3rem; margin: 2rem 0 1rem 0; color: #1a2f4d;">Research & Discovery</h3>
+      <p>We conducted 15 user interviews, analyzed usage patterns, and identified pain points. Key finding: users spent 60% of their time searching for information instead of taking action. This insight drove our entire redesign strategy.</p>
+
+      <h3 style="font-size: 1.3rem; margin: 2rem 0 1rem 0; color: #1a2f4d;">Information Architecture</h3>
+      <p>We restructured the navigation based on user mental models, not organizational hierarchy. Instead of organizing by features, we organized by user workflows: "Manage Relationships," "Track Deals," "Collaborate," and "Analyze."</p>
+
+      <h3 style="font-size: 1.3rem; margin: 2rem 0 1rem 0; color: #1a2f4d;">Behavioral Design</h3>
+      <p>Applied behavioral psychology principles to reduce decision fatigue. Implemented smart defaults, progressive disclosure, and contextual help. Every interaction was designed to guide users toward the right action.</p>
+
+      <h3 style="font-size: 1.3rem; margin: 2rem 0 1rem 0; color: #1a2f4d;">Validation & Iteration</h3>
+      <p>Tested prototypes with 40+ users across different roles. Iterated based on feedback, focusing on the highest-impact workflows first. Achieved 92% task completion in final testing vs. 45% in the original system.</p>
+    </section>
+
+    <!-- IMPACT -->
+    <section class="case-study-section">
+      <h2>Impact</h2>
+      <div class="case-study-metrics">
+        <div class="case-study-metric">
+          <div class="case-study-metric-value">40%</div>
+          <div class="case-study-metric-label">Faster Task Completion</div>
+        </div>
+        <div class="case-study-metric">
+          <div class="case-study-metric-value">3M+</div>
+          <div class="case-study-metric-label">Users Impacted</div>
+        </div>
+        <div class="case-study-metric">
+          <div class="case-study-metric-value">4.8★</div>
+          <div class="case-study-metric-label">User Satisfaction</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- KEY LEARNINGS -->
+    <section class="case-study-section">
+      <h2>Key Learnings</h2>
+      <ul>
+        <li><strong>Understand the workflow, not just the feature:</strong> The best designs solve the user's actual problem, not the feature they asked for.</li>
+        <li><strong>Behavioral design beats visual design:</strong> How the system guides users matters more than how it looks.</li>
+        <li><strong>Test with real workflows:</strong> Lab testing showed 92% completion, but real-world usage revealed edge cases that required iteration.</li>
+        <li><strong>Scalability from day one:</strong> Building a design system early saved months of rework during the enterprise rollout.</li>
+      </ul>
+    </section>
+
+    <!-- CTA -->
+    <div class="case-study-cta">
+      <h3>Interested to know more about this project?</h3>
+      <p>Let's discuss how I can help solve similar challenges for your organization.</p>
+      <a href="index.html#contact" class="btn btn-primary">Get in Touch →</a>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-container">
+      <div class="footer-section">
+        <h4>SR</h4>
+        <p>Product Designer & Communication Coach</p>
+      </div>
+
+      <div class="footer-section">
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="index.html#case-studies">Work</a></li>
+          <li><a href="index.html#publications">Publications</a></li>
+          <li><a href="index.html#services">Services</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-section">
+        <h4>Resources</h4>
+        <ul>
+          <li><a href="shop.html">Shop</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="#">Blog</a></li>
+          <li><a href="#">FAQ</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-section">
+        <h4>Download</h4>
+        <button class="btn btn-primary" onclick="alert('Resume download - implement with your PDF URL')" style="width: 100%; justify-content: center;">📥 Resume (PDF)</button>
+      </div>
+    </div>
+
+    <div class="footer-divider"></div>
+
+    <div class="footer-newsletter">
+      <h4>Stay Updated</h4>
+      <p>Get insights on product design and communication delivered to your inbox.</p>
+      <form class="footer-newsletter-form" onsubmit="event.preventDefault(); alert('Newsletter signup - implement with backend');">
+        <input type="email" placeholder="your@email.com" required>
+        <button type="submit">✉</button>
+      </form>
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2024 SR Product Designer. All rights reserved.</p>
+      <div class="footer-bottom-links">
+        <a href="https://linkedin.com" target="_blank">LinkedIn</a>
+        <a href="https://twitter.com" target="_blank">Twitter</a>
+        <a href="https://dribbble.com" target="_blank">Dribbble</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>

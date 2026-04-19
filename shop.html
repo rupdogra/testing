@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shop - SR Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Lato:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- HEADER -->
+  <header>
+    <div class="header-container">
+      <a href="index.html" class="logo">SR <span class="logo-subtitle">Product Designer</span></a>
+      <nav>
+        <a href="about.html">About</a>
+        <a href="index.html#case-studies">Work</a>
+        <a href="index.html#publications">Publications</a>
+        <a href="index.html#services">Services</a>
+        <a href="index.html#contact">Contact</a>
+        <a href="shop.html">Shop</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- SHOP SECTION -->
+  <section style="padding: 4rem 0;">
+    <div class="container">
+      <!-- Shop Header -->
+      <div class="shop-header">
+        <h1>Digital Products & Resources</h1>
+        <p>Curated guides, courses, and templates to help you excel in product design and communication.</p>
+      </div>
+
+      <!-- Category Tabs -->
+      <div class="category-tabs">
+        <button class="category-tab active" data-category="all" onclick="filterProducts('all')">All Products</button>
+        <button class="category-tab" data-category="communication-guides" onclick="filterProducts('communication-guides')">Communication Guides</button>
+        <button class="category-tab" data-category="interview-systems" onclick="filterProducts('interview-systems')">Interview Systems</button>
+        <button class="category-tab" data-category="exam-prep" onclick="filterProducts('exam-prep')">Exam Prep</button>
+        <button class="category-tab" data-category="cognitive-training" onclick="filterProducts('cognitive-training')">Cognitive Training</button>
+        <button class="category-tab" data-category="free-resources" onclick="filterProducts('free-resources')">Free Resources</button>
+        <button class="category-tab" data-category="product-design-courses" onclick="filterProducts('product-design-courses')">Product Design Courses</button>
+        <button class="category-tab" data-category="digital-templates" onclick="filterProducts('digital-templates')">Digital Templates</button>
+      </div>
+
+      <!-- Products Grid -->
+      <div class="products-grid">
+        <!-- Communication Guides -->
+        <div class="product-card" data-category="communication-guides" style="display: block;">
+          <div class="product-image" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);"></div>
+          <div class="product-content">
+            <span class="product-category">Communication Guides</span>
+            <h3 class="product-title">Executive Presence Framework</h3>
+            <p class="product-description">A step-by-step guide to commanding attention and influence in meetings</p>
+            <ul class="product-features">
+              <li>5 core principles</li>
+              <li>Real-world examples</li>
+              <li>Practice exercises</li>
+            </ul>
+            <div class="product-footer">
+              <span class="product-price">$29</span>
+              <button class="btn btn-primary" onclick="goToContactWithProduct('Executive Presence Framework')">Get Now</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card" data-category="communication-guides" style="display: block;">
+          <div class="product-image" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);"></div>
+          <div class="product-content">
+            <span class="product-category">Communication Guides</span>
+            <h3 class="product-title">On-the-Spot Articulation Playbook</h3>
+            <p class="product-description">Master the art of thinking and speaking clearly under pressure</p>
+            <ul class="product-features">
+              <li>8 techniques</li>
+              <li>Video tutorials</li>
+              <li>Worksheets</li>
+            </ul>
+            <div class="product-footer">
+              <span class="product-price">$39</span>
+              <button class="btn btn-primary" onclick="goToContactWithProduct('On-the-Spot Articulation Playbook')">Get Now</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Interview Systems -->
+        <div class="product-card" data-category="interview-systems" style="display: block;">
+          <div class="product-image" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);"></div>
+          <div class="product-content">
+            <span class="product-category">Interview Systems</span>
+            <h3 class="product-title">Product Design Interview Masterclass</h3>
+            <p class="product-description">Complete system for acing product design interviews at FAANG companies</p>
+            <ul class="product-features">
+              <li>12 modules</li>
+              <li>Mock interviews</li>
+              <li>Case studies</li>
+            </ul>
+            <div class="product-footer">
+              <span class="product-price">$79</span>
+              <button class="btn btn-primary" onclick="goToContactWithProduct('Product Design Interview Masterclass')">Get Now</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card" data-category="interview-systems" style="display: block;">
+          <div class="product-image" style="background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);"></div>
+          <div class="product-content">
+            <span class="product-category">Interview Systems</span>
+            <h3 class="product-title">Behavioral Interview Framework</h3>
+            <p class="product-description">Structured approach to answering behavioral questions with confidence</p>
+            <ul class="product-features">
+              <li>STAR method guide</li>
+              <li>Example answers</li>
+              <li>Practice prompts</li>
+            </ul>
+            <div class="product-footer">
+              <span class="product-price">$49</span>
+              <button class="btn btn-primary" onclick="goToContactWithProduct('Behavioral Interview Framework')">Get Now</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Exam Prep -->
+        <div class="product-card" data-category="exam-prep" style="display: block;">
+          <div class="product-image" style="background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);"></div>
+          <div class="product-content">
+            <span class="product-category">Exam Prep</span>
+            <h3 class="product-title">IELTS Speaking Performance System</h3>
+            <p class="product-description">Proven techniques to score 8+ on IELTS speaking</p>
+            <ul class="product-features">
+              <li>Band 8+ strategies</li>
+              <li>Sample responses</li>
+              <li>Pronunciation guide</li>
+            </ul>
+            <div class="product-footer">
+              <span class="product-price">$59</span>
+              <button class="btn btn-primary" onclick="goToContactWithProduct('IELTS Speaking Performance System')">Get Now</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card" data-category="exam-prep" style="display: block;">
+          <div class="product-image" style="background: linear-gradient(135deg, #ff9a56 0%, #ff6a88 100%);"></div>
+          <div class="product-content">
+            <span class="product-category">Exam Prep</span>
+            <h3 class="product-title">CELPIP Performance Bootcamp</h3>
+            <p class="product-description">Fast-track your CELPIP scores with strategic speaking techniques</p>
+            <ul class="product-features">
+              <li>7-day intensive</li>
+              <li>Video lessons</li>
+              <li>Practice tests</li>
+            </ul>
+            <div class="product-footer">
+              <span class="product-price">$69</span>
+              <button class="btn btn-primary" onclick="goToContactWithProduct('CELPIP Performance Bootcamp')">Get Now</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Cognitive Training -->
+        <div class="product-card" data-category="cognitive-training" style="display: block;">
+          <div class="product-image" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);"></div>
+          <div class="product-content">
+            <span class="product-category">Cognitive Training</span>
+            <h3 class="product-title">Structured Thinking Masterclass</h3>
+            <p class="product-description">Learn to organize complex ideas and communicate them clearly</p>
+            <ul class="product-features">
+              <li>5 frameworks</li>
+              <li>Real examples</li>
+              <li>Templates</li>
+            </ul>
+            <div class="product-footer">
+              <span class="product-price">$49</span>
+              <button class="btn btn-primary" onclick="goToContactWithProduct('Structured Thinking Masterclass')">Get Now</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Free Resources -->
+        <div class="product-card" data-category="free-resources" style="display: block;">
+          <div class="product-image" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);"></div>
+          <div class="product-content">
+            <span class="product-category">Free Resources</span>
+            <h3 class="product-title">Communication Checklist</h3>
+            <p class="product-description">Free checklist for preparing for high-stakes presentations</p>
+            <ul class="product-features">
+              <li>Downloadable PDF</li>
+              <li>Printable format</li>
+              <li>Reusable template</li>
+            </ul>
+            <div class="product-footer">
+              <span class="product-price">Free</span>
+              <button class="btn btn-primary" onclick="goToContactWithProduct('Communication Checklist')">Get Now</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product Design Courses -->
+        <div class="product-card" data-category="product-design-courses" style="display: block;">
+          <div class="product-image" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);"></div>
+          <div class="product-content">
+            <span class="product-category">Product Design Courses</span>
+            <h3 class="product-title">Behavioral UX Fundamentals</h3>
+            <p class="product-description">Design products that work with human psychology, not against it</p>
+            <ul class="product-features">
+              <li>12 video modules</li>
+              <li>Design exercises</li>
+              <li>Certificate</li>
+            </ul>
+            <div class="product-footer">
+              <span class="product-price">$99</span>
+              <button class="btn btn-primary" onclick="goToContactWithProduct('Behavioral UX Fundamentals')">Get Now</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Digital Templates -->
+        <div class="product-card" data-category="digital-templates" style="display: block;">
+          <div class="product-image" style="background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);"></div>
+          <div class="product-content">
+            <span class="product-category">Digital Templates</span>
+            <h3 class="product-title">Design System Documentation Template</h3>
+            <p class="product-description">Professional template for documenting your design system</p>
+            <ul class="product-features">
+              <li>Figma file</li>
+              <li>Customizable</li>
+              <li>Best practices guide</li>
+            </ul>
+            <div class="product-footer">
+              <span class="product-price">$39</span>
+              <button class="btn btn-primary" onclick="goToContactWithProduct('Design System Documentation Template')">Get Now</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-container">
+      <div class="footer-section">
+        <h4>SR</h4>
+        <p>Product Designer & Communication Coach</p>
+      </div>
+
+      <div class="footer-section">
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="index.html#case-studies">Work</a></li>
+          <li><a href="index.html#publications">Publications</a></li>
+          <li><a href="index.html#services">Services</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-section">
+        <h4>Resources</h4>
+        <ul>
+          <li><a href="shop.html">Shop</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="#">Blog</a></li>
+          <li><a href="#">FAQ</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-section">
+        <h4>Download</h4>
+        <button class="btn btn-primary" onclick="alert('Resume download - implement with your PDF URL')" style="width: 100%; justify-content: center;">📥 Resume (PDF)</button>
+      </div>
+    </div>
+
+    <div class="footer-divider"></div>
+
+    <div class="footer-newsletter">
+      <h4>Stay Updated</h4>
+      <p>Get insights on product design and communication delivered to your inbox.</p>
+      <form class="footer-newsletter-form" onsubmit="event.preventDefault(); alert('Newsletter signup - implement with backend');">
+        <input type="email" placeholder="your@email.com" required>
+        <button type="submit">✉</button>
+      </form>
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2024 SR Product Designer. All rights reserved.</p>
+      <div class="footer-bottom-links">
+        <a href="https://linkedin.com" target="_blank">LinkedIn</a>
+        <a href="https://twitter.com" target="_blank">Twitter</a>
+        <a href="https://dribbble.com" target="_blank">Dribbble</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>
