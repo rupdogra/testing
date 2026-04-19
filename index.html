@@ -20,7 +20,7 @@
         <a href="#publications">Publications</a>
         <a href="#services">Services</a>
         <a href="#contact">Contact</a>
-        <a href="shop.html">Shop</a>
+        <a href="shop.html" class="nav-shop">🛒 Shop</a>
       </nav>
     </div>
   </header>
@@ -71,7 +71,7 @@
       <p class="section-subtitle">Explore how I've helped companies design systems that reduce friction and increase user satisfaction.</p>
 
       <div class="case-grid">
-        <a href="case-study.html?id=project-1" class="case-card-link">
+        <a href="javascript:void(0)" onclick="goToContactWithCaseStudy('AI-Powered CRM System')" class="case-card-link">
           <div class="case-card">
             <div class="case-card-image">
               <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&h=400&fit=crop" alt="AI-Powered CRM System">
@@ -81,7 +81,7 @@
                 <div class="case-card-overlay-category">Product Design</div>
                 <div class="case-card-overlay-title">AI-Powered CRM System</div>
                 <div class="case-card-overlay-description">Redesigned workflow for enterprise CRM with AI integration</div>
-                <div class="case-card-overlay-cta">View Case Study →</div>
+                <div class="case-card-overlay-cta">Get in Touch →</div>
               </div>
             </div>
             <div class="case-card-static">
@@ -92,7 +92,7 @@
           </div>
         </a>
 
-        <a href="case-study.html?id=project-2" class="case-card-link">
+        <a href="javascript:void(0)" onclick="goToContactWithCaseStudy('Behavioral UX Framework')" class="case-card-link">
           <div class="case-card">
             <div class="case-card-image">
               <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=600&h=400&fit=crop" alt="Behavioral UX Framework">
@@ -102,7 +102,7 @@
                 <div class="case-card-overlay-category">UX Research</div>
                 <div class="case-card-overlay-title">Behavioral UX Framework</div>
                 <div class="case-card-overlay-description">Reduced technostress through behavioral design principles</div>
-                <div class="case-card-overlay-cta">View Case Study →</div>
+                <div class="case-card-overlay-cta">Get in Touch →</div>
               </div>
             </div>
             <div class="case-card-static">
@@ -113,7 +113,7 @@
           </div>
         </a>
 
-        <a href="case-study.html?id=project-3" class="case-card-link">
+        <a href="javascript:void(0)" onclick="goToContactWithCaseStudy('Workflow Optimization')" class="case-card-link">
           <div class="case-card">
             <div class="case-card-image">
               <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=600&h=400&fit=crop" alt="Workflow Optimization">
@@ -123,7 +123,7 @@
                 <div class="case-card-overlay-category">Systems Design</div>
                 <div class="case-card-overlay-title">Workflow Optimization</div>
                 <div class="case-card-overlay-description">Streamlined complex workflows reducing friction points</div>
-                <div class="case-card-overlay-cta">View Case Study →</div>
+                <div class="case-card-overlay-cta">Get in Touch →</div>
               </div>
             </div>
             <div class="case-card-static">
@@ -134,7 +134,7 @@
           </div>
         </a>
 
-        <a href="case-study.html?id=project-4" class="case-card-link">
+        <a href="javascript:void(0)" onclick="goToContactWithCaseStudy('Mobile Experience Design')" class="case-card-link">
           <div class="case-card">
             <div class="case-card-image">
               <img src="https://images.unsplash.com/photo-1512941691920-25bda36dc643?w=600&h=400&fit=crop" alt="Mobile Experience Design">
@@ -144,7 +144,7 @@
                 <div class="case-card-overlay-category">Mobile Design</div>
                 <div class="case-card-overlay-title">Mobile Experience Design</div>
                 <div class="case-card-overlay-description">Designed intuitive mobile banking experience</div>
-                <div class="case-card-overlay-cta">View Case Study →</div>
+                <div class="case-card-overlay-cta">Get in Touch →</div>
               </div>
             </div>
             <div class="case-card-static">
@@ -254,14 +254,14 @@
   <section id="services" class="alt-bg">
     <div class="container">
       <div class="section-title">Services</div>
-      <p class="section-subtitle">Two complementary services to help you design better products and communicate with confidence.</p>
+      <p class="section-subtitle">Three complementary services to help you design better products, communicate with confidence, and find the right resources.</p>
 
       <div class="services-grid">
         <!-- Service 1 -->
         <div class="service-card">
           <div class="service-card-title">Product & Experience Design</div>
           <div class="service-card-subtitle">Designing systems that people can actually think and work within.</div>
-          <p class="service-card-description">I help organizations design intuitive, friction-free systems that reduce cognitive load and increase productivity. From workflow optimization to behavioral UX, I focus on creating experiences that work as well as they look.</p>
+          <p class="service-card-description">I help organizations design intuitive, friction-free systems that reduce cognitive load and increase productivity. From workflow optimization to behavioral UX research[...]</p>
 
           <div class="service-card-section-title">What's Included</div>
           <ul class="service-features">
@@ -283,17 +283,17 @@
           </div>
 
           <div class="service-cta">
-            <button class="btn btn-primary" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Buy Now →</button>
-            <button class="btn btn-outline" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Inquiry</button>
+            <button class="btn btn-primary" onclick="goToContactWithService('product-design')">Buy Now →</button>
+            <button class="btn btn-outline" onclick="goToContactWithService('product-design')">Inquiry</button>
           </div>
-          <p class="service-note">Both services include a 30-minute free discovery call</p>
+          <p class="service-note">All services include a 30-minute free discovery call</p>
         </div>
 
         <!-- Service 2 -->
         <div class="service-card">
           <div class="service-card-title">Cognitive & Behavioral Communication</div>
           <div class="service-card-subtitle">Structured thinking. Precision speaking. High-stakes performance.</div>
-          <p class="service-card-description">Think faster. Speak clearer. Perform under pressure. I coach high-performers on communication excellence, from executive presence to on-the-spot articulation. Perfect for interviews, presentations, and critical business moments.</p>
+          <p class="service-card-description">Think faster. Speak clearer. Perform under pressure. I coach high-performers on communication excellence, from executive presence to on-the-spot articulation[...]</p>
 
           <div class="service-card-section-title">What's Included</div>
           <ul class="service-features">
@@ -315,10 +315,42 @@
           </div>
 
           <div class="service-cta">
-            <button class="btn btn-primary" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Buy Now →</button>
-            <button class="btn btn-outline" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Inquiry</button>
+            <button class="btn btn-primary" onclick="goToContactWithService('communication-coaching')">Buy Now →</button>
+            <button class="btn btn-outline" onclick="goToContactWithService('communication-coaching')">Inquiry</button>
           </div>
-          <p class="service-note">Both services include a 30-minute free discovery call</p>
+          <p class="service-note">All services include a 30-minute free discovery call</p>
+        </div>
+
+        <!-- Service 3 -->
+        <div class="service-card">
+          <div class="service-card-title">Digital Products & Resources</div>
+          <div class="service-card-subtitle">Curated guides, courses, and templates for your growth.</div>
+          <p class="service-card-description">Self-paced learning resources designed to help you master product design, communication, and professional development at your own pace[...]</p>
+
+          <div class="service-card-section-title">What's Included</div>
+          <ul class="service-features">
+            <li>Product Design Courses</li>
+            <li>Communication Guides & Playbooks</li>
+            <li>Interview Preparation Systems</li>
+            <li>Exam Prep Resources (IELTS, CELPIP)</li>
+            <li>Design System Templates</li>
+            <li>Digital Tools & Frameworks</li>
+          </ul>
+
+          <div class="service-ideal">
+            <strong>Ideal For:</strong>
+            <div class="service-ideal-tags">
+              <span class="service-ideal-tag">Self-learners</span>
+              <span class="service-ideal-tag">Career Growth</span>
+              <span class="service-ideal-tag">Budget-Conscious</span>
+            </div>
+          </div>
+
+          <div class="service-cta">
+            <button class="btn btn-primary" onclick="goToContactWithService('shop')">Browse Shop →</button>
+            <button class="btn btn-outline" onclick="location.href='shop.html'">View Products</button>
+          </div>
+          <p class="service-note">All services include a 30-minute free discovery call</p>
         </div>
       </div>
     </div>
@@ -342,7 +374,7 @@
           </div>
 
           <div class="contact-info-item">
-            <div class="contact-info-icon">📞</div>
+            <div class="contact-info-icon">☎</div>
             <div class="contact-info-content">
               <h3>Phone</h3>
               <a href="tel:+1234567890">+1 (234) 567-890</a>
@@ -382,6 +414,16 @@
           <div class="form-group">
             <label>Phone</label>
             <input type="tel" name="phone">
+          </div>
+
+          <div class="form-group">
+            <label>Service *</label>
+            <select name="service" required>
+              <option value="">Select a service...</option>
+              <option value="product-design">Product & Experience Design</option>
+              <option value="communication-coaching">Cognitive & Behavioral Communication</option>
+              <option value="shop">Shop Product</option>
+            </select>
           </div>
 
           <div class="form-group">
@@ -425,7 +467,7 @@
 
       <div class="footer-section">
         <h4>Download</h4>
-        <button class="btn btn-primary" onclick="alert('Resume download - implement with your PDF URL')" style="width: 100%; justify-content: center;">📥 Resume (PDF)</button>
+        <a href="your-resume-url.pdf" download class="btn btn-primary" style="width: 100%; justify-content: center; text-align: center;">Download Resume</a>
       </div>
     </div>
 
@@ -433,7 +475,7 @@
 
     <div class="footer-newsletter">
       <h4>Stay Updated</h4>
-      <p>Get insights on product design and communication delivered to your inbox.</p>
+      <p>Join our community of designers and leaders. Get exclusive insights on product design and communication delivered to your inbox every week.</p>
       <form class="footer-newsletter-form" onsubmit="event.preventDefault(); alert('Newsletter signup - implement with backend');">
         <input type="email" placeholder="your@email.com" required>
         <button type="submit">✉</button>
