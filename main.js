@@ -423,68 +423,30 @@ function goToContactWithCaseStudy(caseStudyName) {
 // CONTACT FORM HANDLING
 // ============================================
 
-function initContactForm() {
-  const form = document.querySelector('.contact-form');
-  if (!form) return;
+// ============================================
+// SMOOTH SCROLLING - ONLY ON MANUAL CLICKS
+// ============================================
 
-  // Get URL parameters from hash (e.g., #contact?product=Executive+Presence+Framework)
-  const hash = window.location.hash.split('?')[1];
-  const params = new URLSearchParams(hash);
-  const product = params.get('product');
-  const service = params.get('service');
-  const caseStudy = params.get('case');
+function initSmoothScroll() {
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      const href = this.getAttribute('href');
+      if (href === '#') return;
 
-  // Auto-fill service dropdown
-  const serviceSelect = form.querySelector('select[name="service"]');
-  if (service && serviceSelect) {
-    serviceSelect.value = decodeURIComponent(service);
-  }
-
-  // Auto-fill message
-  const messageField = form.querySelector('textarea[name="message"]');
-  if (messageField) {
-    if (product) {
-      messageField.value = `I'm interested in: ${decodeURIComponent(product)}`;
-    } else if (caseStudy) {
-      messageField.value = `I'm interested in discussing: ${decodeURIComponent(caseStudy)}`;
-    }
-  }
-
-  // Scroll to form if parameters were present
-  if (product || service || caseStudy) {
-    setTimeout(() => {
-      const contactSection = document.querySelector('#contact');
-      if (contactSection) {
-        contactSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      e.preventDefault();
+      const target = document.querySelector(href);
+      if (target) {
+        // Temporarily enable smooth scroll
+        document.documentElement.style.scrollBehavior = 'smooth';
+        
+        target.scrollIntoView();
+        
+        // Revert to auto after scroll
+        setTimeout(() => {
+          document.documentElement.style.scrollBehavior = 'auto';
+        }, 1000);
       }
-    }, 100);
-  }
-
-  // Form submission
-  form.addEventListener('submit', (e) => {
-    e.preventDefault();
-    
-    const formData = {
-      fullName: form.querySelector('input[name="fullName"]').value,
-      email: form.querySelector('input[name="email"]').value,
-      phone: form.querySelector('input[name="phone"]').value,
-      service: form.querySelector('select[name="service"]').value,
-      message: form.querySelector('textarea[name="message"]').value,
-    };
-
-    console.log('Form submitted:', formData);
-
-    // Show success message
-    const submitButton = form.querySelector('button[type="submit"]');
-    const originalText = submitButton.textContent;
-    submitButton.textContent = '✓ Message sent!';
-    submitButton.style.background = '#d4714d';
-
-    setTimeout(() => {
-      submitButton.textContent = originalText;
-      submitButton.style.background = '';
-      form.reset();
-    }, 3000);
+    });
   });
 }
 
