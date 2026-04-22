@@ -367,59 +367,6 @@ function goToContactWithProduct(productName) {
   params.set('service', 'shop');
   window.location.href = `index.html#contact?${params.toString()}`;
 }
-  
-  // Check if we're already on index.html
-  if (window.location.pathname.includes('shop.html') || window.location.pathname === '/') {
-    window.location.href = newUrl;
-    // After redirect, the page will load and initContactForm will handle auto-fill
-    // Then we scroll to the form
-    setTimeout(() => {
-      const contactSection = document.querySelector('#contact');
-      if (contactSection) {
-        contactSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      }
-    }, 800);
-  } else {
-    // Already on index.html or another page
-    window.location.href = newUrl;
-    setTimeout(() => {
-      const contactSection = document.querySelector('#contact');
-      if (contactSection) {
-        contactSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      }
-    }, 800);
-  }
-}
-
-function goToContactWithService(serviceName) {
-  const params = new URLSearchParams();
-  params.set('service', serviceName);
-  const newUrl = `index.html#contact?${params.toString()}`;
-  window.location.href = newUrl;
-  
-  setTimeout(() => {
-    const contactSection = document.querySelector('#contact');
-    if (contactSection) {
-      contactSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
-  }, 800);
-}
-
-function goToContactWithCaseStudy(caseStudyName) {
-  const params = new URLSearchParams();
-  params.set('case', caseStudyName);
-  params.set('service', 'product-design');
-  const newUrl = `index.html#contact?${params.toString()}`;
-  window.location.href = newUrl;
-  
-  setTimeout(() => {
-    const contactSection = document.querySelector('#contact');
-    if (contactSection) {
-      contactSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
-  }, 800);
-}
-
 
 function goToContactWithServiceName(serviceName, serviceValue) {
   const params = new URLSearchParams();
@@ -428,21 +375,76 @@ function goToContactWithServiceName(serviceName, serviceValue) {
   window.location.href = `index.html#contact?${params.toString()}`;
 }
 
+function goToContactWithCaseStudy(caseStudyName) {
+  const params = new URLSearchParams();
+  params.set('case', caseStudyName);
+  params.set('service', 'product-design');
+  window.location.href = `index.html#contact?${params.toString()}`;
+}
+
 // ============================================
 // CONTACT FORM HANDLING
 // ============================================
 
-// ============================================
-// SMOOTH SCROLLING - ONLY ON MANUAL CLICKS
-// ============================================
+function initContactForm() {
+  const form = document.querySelector('.contact-form');
+  if (!form) return;
 
-// ============================================
-// SMOOTH SCROLLING - DISABLED
-// ============================================
+  // Get URL parameters from hash
+  const hash = window.location.hash.split('?')[1];
+  const params = new URLSearchParams(hash);
+  const product = params.get('product');
+  const service = params.get('service');
+  const serviceName = params.get('serviceName');
+  const caseStudy = params.get('case');
 
-function initSmoothScroll() {
-  // DO NOT INITIALIZE SMOOTH SCROLL
-  // Only smooth scroll when button/function specifically calls it
+  // Delay slightly to ensure form is fully rendered
+  setTimeout(() => {
+    // Auto-fill service dropdown
+    const serviceSelect = form.querySelector('select[name="service"]');
+    if (service && serviceSelect) {
+      serviceSelect.value = service;
+    }
+
+    // Auto-fill message
+    const messageField = form.querySelector('textarea[name="message"]');
+    if (messageField) {
+      if (serviceName) {
+        messageField.value = `I'm interested in ${serviceName}`;
+      } else if (product) {
+        messageField.value = `I'm interested in: ${decodeURIComponent(product)}`;
+      } else if (caseStudy) {
+        messageField.value = `I'm interested in discussing: ${decodeURIComponent(caseStudy)}`;
+      }
+    }
+  }, 100);
+
+  // Form submission
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    
+    const formData = {
+      fullName: form.querySelector('input[name="fullName"]').value,
+      email: form.querySelector('input[name="email"]').value,
+      phone: form.querySelector('input[name="phone"]').value,
+      service: form.querySelector('select[name="service"]').value,
+      message: form.querySelector('textarea[name="message"]').value,
+    };
+
+    console.log('Form submitted:', formData);
+
+    // Show success message
+    const submitButton = form.querySelector('button[type="submit"]');
+    const originalText = submitButton.textContent;
+    submitButton.textContent = '✓ Message sent!';
+    submitButton.style.background = '#d4714d';
+
+    setTimeout(() => {
+      submitButton.textContent = originalText;
+      submitButton.style.background = '';
+      form.reset();
+    }, 3000);
+  });
 }
 
 // ============================================
@@ -516,25 +518,12 @@ function closeNewsletterPopup() {
 }
 
 // ============================================
-// SMOOTH SCROLLING - FIXED
+// SMOOTH SCROLLING - DISABLED (NO AUTO-SCROLL)
 // ============================================
 
 function initSmoothScroll() {
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-      const href = this.getAttribute('href');
-      if (href === '#') return;
-
-      e.preventDefault();
-      const target = document.querySelector(href);
-      if (target) {
-        target.scrollIntoView({
-          behavior: 'smooth',
-          block: 'start',
-        });
-      }
-    });
-  });
+  // DISABLED - No automatic smooth scrolling on page load
+  // Only navigation links will work normally
 }
 
 // ============================================
@@ -547,7 +536,6 @@ document.addEventListener('DOMContentLoaded', () => {
   initAboutCarousels();
   initContactForm();
   initNewsletterPopup();
-  // initSmoothScroll(); // DISABLED - No auto smooth scroll
 });
 
 // Cleanup on page unload
