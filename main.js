@@ -420,6 +420,14 @@ function goToContactWithCaseStudy(caseStudyName) {
   }, 800);
 }
 
+
+function goToContactWithServiceName(serviceName, serviceValue) {
+  const params = new URLSearchParams();
+  params.set('service', serviceValue);
+  params.set('serviceName', serviceName);
+  window.location.href = `index.html#contact?${params.toString()}`;
+}
+
 // ============================================
 // CONTACT FORM HANDLING
 // ============================================
