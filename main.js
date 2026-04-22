@@ -365,7 +365,8 @@ function goToContactWithProduct(productName) {
   const params = new URLSearchParams();
   params.set('product', productName);
   params.set('service', 'shop');
-  const newUrl = `index.html#contact?${params.toString()}`;
+  window.location.href = `index.html#contact?${params.toString()}`;
+}
   
   // Check if we're already on index.html
   if (window.location.pathname.includes('shop.html') || window.location.pathname === '/') {
@@ -427,27 +428,13 @@ function goToContactWithCaseStudy(caseStudyName) {
 // SMOOTH SCROLLING - ONLY ON MANUAL CLICKS
 // ============================================
 
-function initSmoothScroll() {
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-      const href = this.getAttribute('href');
-      if (href === '#') return;
+// ============================================
+// SMOOTH SCROLLING - DISABLED
+// ============================================
 
-      e.preventDefault();
-      const target = document.querySelector(href);
-      if (target) {
-        // Temporarily enable smooth scroll
-        document.documentElement.style.scrollBehavior = 'smooth';
-        
-        target.scrollIntoView();
-        
-        // Revert to auto after scroll
-        setTimeout(() => {
-          document.documentElement.style.scrollBehavior = 'auto';
-        }, 1000);
-      }
-    });
-  });
+function initSmoothScroll() {
+  // DO NOT INITIALIZE SMOOTH SCROLL
+  // Only smooth scroll when button/function specifically calls it
 }
 
 // ============================================
@@ -552,7 +539,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initAboutCarousels();
   initContactForm();
   initNewsletterPopup();
-  initSmoothScroll();
+  // initSmoothScroll(); // DISABLED - No auto smooth scroll
 });
 
 // Cleanup on page unload
