@@ -1595,7 +1595,7 @@ nav a.nav-shop:hover::after {
    ============================================ */
 
 html {
-  scroll-behavior: smooth;
+  scroll-behavior: auto;
 }
 
 /* Remove any weird auto-scroll on home page */
