@@ -365,28 +365,58 @@ function goToContactWithProduct(productName) {
   const params = new URLSearchParams();
   params.set('product', productName);
   params.set('service', 'shop');
-  window.location.href = `index.html#contact?${params.toString()}`;
+  const newUrl = `index.html#contact?${params.toString()}`;
   
-  // Wait a moment for the page to load, then scroll
-  setTimeout(() => {
-    const contactForm = document.querySelector('.contact-form');
-    if (contactForm) {
-      contactForm.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
-  }, 500);
+  // Check if we're already on index.html
+  if (window.location.pathname.includes('shop.html') || window.location.pathname === '/') {
+    window.location.href = newUrl;
+    // After redirect, the page will load and initContactForm will handle auto-fill
+    // Then we scroll to the form
+    setTimeout(() => {
+      const contactSection = document.querySelector('#contact');
+      if (contactSection) {
+        contactSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }, 800);
+  } else {
+    // Already on index.html or another page
+    window.location.href = newUrl;
+    setTimeout(() => {
+      const contactSection = document.querySelector('#contact');
+      if (contactSection) {
+        contactSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }, 800);
+  }
 }
 
 function goToContactWithService(serviceName) {
   const params = new URLSearchParams();
   params.set('service', serviceName);
-  window.location.href = `index.html#contact?${params.toString()}`;
+  const newUrl = `index.html#contact?${params.toString()}`;
+  window.location.href = newUrl;
+  
+  setTimeout(() => {
+    const contactSection = document.querySelector('#contact');
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  }, 800);
 }
 
 function goToContactWithCaseStudy(caseStudyName) {
   const params = new URLSearchParams();
   params.set('case', caseStudyName);
   params.set('service', 'product-design');
-  window.location.href = `index.html#contact?${params.toString()}`;
+  const newUrl = `index.html#contact?${params.toString()}`;
+  window.location.href = newUrl;
+  
+  setTimeout(() => {
+    const contactSection = document.querySelector('#contact');
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  }, 800);
 }
 
 // ============================================
@@ -418,6 +448,16 @@ function initContactForm() {
     } else if (caseStudy) {
       messageField.value = `I'm interested in discussing: ${decodeURIComponent(caseStudy)}`;
     }
+  }
+
+  // Scroll to form if parameters were present
+  if (product || service || caseStudy) {
+    setTimeout(() => {
+      const contactSection = document.querySelector('#contact');
+      if (contactSection) {
+        contactSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }, 100);
   }
 
   // Form submission
@@ -519,7 +559,7 @@ function closeNewsletterPopup() {
 }
 
 // ============================================
-// SMOOTH SCROLLING
+// SMOOTH SCROLLING - FIXED
 // ============================================
 
 function initSmoothScroll() {
